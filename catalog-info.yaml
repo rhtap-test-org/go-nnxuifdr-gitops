@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-nnxuifdr-gitops
+  description: This is GitOps manifest for go-nnxuifdr   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-nnxuifdr
+    backstage.io/kubernetes-id: go-nnxuifdr 
+    backstage.io/techdocs-ref: dir:. 
+    github.com/project-slug: rhtap-test-org/go-nnxuifdr-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-nnxuifdr
